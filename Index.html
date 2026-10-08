@@ -1,0 +1,122 @@
+!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPTECH AI 360</title>
+<style>
+body{margin:0;font-family:Arial;background:#f3f7f5;color:#17221d}
+header{background:#087443;color:white;padding:20px;text-align:center}
+main{padding:20px;max-width:900px;margin:auto}
+.card{background:white;padding:20px;margin:15px 0;border-radius:15px;box-shadow:0 3px 12px #ccc}
+h1,h2{color:#087443}
+input,select,textarea{width:100%;padding:12px;margin:8px 0 15px;border:1px solid #ccc;border-radius:8px}
+button{background:#087443;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:bold}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.service{background:#eef8f2;padding:15px;border-radius:10px}
+#result{display:none;background:#eef8f2;padding:15px;margin-top:15px;border-radius:10px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>JPTECH AI 360°</h1>
+<p>Facilities Multi Services</p>
+</header>
+
+<main>
+
+<div class="card">
+<h2>🤖 AI Receptionist</h2>
+<p>Système intelligent de réception des demandes clients.</p>
+
+<label>Nom du client</label>
+<input id="nom" placeholder="Nom">
+
+<label>WhatsApp</label>
+<input id="phone" placeholder="Téléphone">
+
+<label>Service demandé</label>
+<select id="service">
+<option>Électricité bâtiment</option>
+<option>Électricité industrielle</option>
+<option>Caméras de surveillance</option>
+<option>Plomberie & sanitaire</option>
+<option>Solaire / Inverter</option>
+<option>Climatisation</option>
+<option>Pompes / surpresseurs</option>
+<option>Maintenance bâtiment</option>
+<option>Sheetrock</option>
+<option>Serrurerie</option>
+<option>Forklift électrique</option>
+<option>Racking industriel</option>
+<option>Maintenance électromécanique</option>
+</select>
+
+<label>Localisation</label>
+<input id="lieu" placeholder="Ex: Cap-Haïtien, Limonade">
+
+<label>Problème ou travail demandé</label>
+<textarea id="probleme" rows="4"></textarea>
+
+<button onclick="enregistrer()">Enregistrer le client</button>
+
+<div id="result"></div>
+</div>
+
+<div class="card">
+<h2>🛠️ Services JPTECH</h2>
+
+<div class="services">
+<div class="service">⚡ Électricité</div>
+<div class="service">📹 Caméras</div>
+<div class="service">💧 Plomberie</div>
+<div class="service">☀️ Solaire / Inverter</div>
+<div class="service">❄️ Climatisation</div>
+<div class="service">🚜 Forklift</div>
+<div class="service">📦 Racking</div>
+<div class="service">🏭 Électromécanique</div>
+<div class="service">🏗️ Maintenance bâtiment</div>
+</div>
+</div>
+
+<div class="card">
+<h2>📄 AI Devis Assistant</h2>
+<p>Préparation de devis avec validation finale de Jean Pharel.</p>
+<button onclick="alert('Module devis en préparation')">Préparer un devis</button>
+</div>
+
+<div class="card">
+<h2>📣 Marketing AI</h2>
+<p>Création automatique de contenus pour WhatsApp, Facebook, Instagram et TikTok.</p>
+<button onclick="alert('Module Marketing AI en préparation')">Créer une publication</button>
+</div>
+
+</main>
+
+<script>
+function enregistrer(){
+let nom=document.getElementById("nom").value;
+let service=document.getElementById("service").value;
+let lieu=document.getElementById("lieu").value;
+let probleme=document.getElementById("probleme").value;
+
+if(!nom || !probleme){
+alert("Veuillez remplir le nom et le problème.");
+return;
+}
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("result").innerHTML=
+"<b>Lead enregistré ✅</b><br><br>"+
+"Client : "+nom+"<br>"+
+"Service : "+service+"<br>"+
+"Localisation : "+lieu+"<br>"+
+"Problème : "+probleme;
+}
+</script>
+
+</body>
+</html>
